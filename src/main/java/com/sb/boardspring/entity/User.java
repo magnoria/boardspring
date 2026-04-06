@@ -1,4 +1,4 @@
-package com.sb.boardspring.domain;
+package com.sb.boardspring.entity;
 
 import jakarta.persistence.*;
 
