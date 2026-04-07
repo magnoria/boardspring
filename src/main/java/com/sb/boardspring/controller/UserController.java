@@ -1,5 +1,7 @@
 package com.sb.boardspring.controller;
 
+import com.sb.boardspring.dto.LoginRequest;
+import com.sb.boardspring.dto.LoginResponse;
 import com.sb.boardspring.dto.SignupRequest;
 import com.sb.boardspring.dto.SignupResponse;
 import com.sb.boardspring.service.UserService;
@@ -24,5 +26,12 @@ public class UserController {
     public ResponseEntity<SignupResponse> signup(@RequestBody SignupRequest request){
         SignupResponse response = userService.signup(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    //로그인
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest request){
+        LoginResponse response = userService.login(request);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
