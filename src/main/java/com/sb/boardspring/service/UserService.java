@@ -5,6 +5,7 @@ import com.sb.boardspring.dto.LoginResponse;
 import com.sb.boardspring.entity.User;
 import com.sb.boardspring.dto.SignupRequest;
 import com.sb.boardspring.dto.SignupResponse;
+import com.sb.boardspring.jwt.JwtUtil;
 import com.sb.boardspring.repository.UserRepository;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,10 +16,12 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder){
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil){
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil;
 
     }
 
@@ -53,10 +56,15 @@ public class UserService {
             throw new IllegalArgumentException("이메일 또는 비밀번호가 올바르지 않습니다.");
 
         }
+
+        String token = jwtUtil.createToken(user.getId(), user.getEmail());
+        //System.out.println(token);
+
         return new LoginResponse(
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
+                token,
                 "로그인 성공"
         );
 

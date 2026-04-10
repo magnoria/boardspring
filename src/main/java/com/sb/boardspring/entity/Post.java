@@ -15,8 +15,8 @@ public class Post {
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id") // 여기 join부분이 라라벨과 조금 다름  관계선언이 라라벨이 더 짧고 직관적 java는 명시적
+    @ManyToOne(fetch = FetchType.LAZY)// 필요할때만 조회
+    @JoinColumn(name = "user_id", nullable = false) // 여기 join부분이 라라벨과 조금 다름  관계선언이 라라벨이 더 짧고 직관적 java는 명시적
     private User user;
 
     protected Post() {

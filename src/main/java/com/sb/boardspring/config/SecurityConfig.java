@@ -14,9 +14,11 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/users/signup" , "/api/users/login").permitAll()
-                        .anyRequest().authenticated()
+                        //.anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
-                .formLogin(form->form.disable());
+                .formLogin(form->form.disable())
+                .httpBasic(httpBasic -> httpBasic.disable());//시큐리티 기본로그인 사용하지 않음
         return http.build();
     }
 }
