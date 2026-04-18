@@ -33,6 +33,7 @@ function PostListPage() {
               <Link to={`/posts/${post.id}`}>
                 <h3>{post.title}</h3>
               </Link>
+              <p>내용 : {post.content}</p>
               <p>작성자: {post.userName}</p>
             </li>
           ))}
