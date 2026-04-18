@@ -6,7 +6,12 @@ function App(){
   return (
     <Laout>
       <Routes>
-        <Route path="/"></Route>
+        <Route path="/" element={<PostListPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/posts/new" element={<PostCreatePage />} />
+        <Route path="/posts/:id" element={<PostDetailPage />} />
+        <Route path="/posts/:id/edit" element={<PostEditPage />} />
       </Routes>
     </Laout>
   )
