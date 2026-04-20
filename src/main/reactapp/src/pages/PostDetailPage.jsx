@@ -45,11 +45,11 @@ function PostDetailPage(){
     if (!post) {
         return <p>불러오는 중...</p>;
     }
-    //console.log('전체 응답:', post)
+    console.log('전체 응답:', post)
   
     const isOwner = post?.userId != null && Number(post.userId) === loginUserId;
-    //console.log(post.userId)
-    //console.log(loginUserId)
+    console.log(post.userId)
+    console.log(loginUserId)
     // console.log('all keys check:', {
     // userId: localStorage.getItem('userId'),
     // id: localStorage.getItem('id'),

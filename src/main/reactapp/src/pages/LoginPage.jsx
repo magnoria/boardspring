@@ -28,7 +28,7 @@ function LoginPage(){
             })
 
             localStorage.setItem('token', data.token)
-            localStorage.setItem('userId', data.userId)
+            localStorage.setItem('userId', data.id)
             localStorage.setItem('userName', data.name)
             localStorage.setItem('email', data.email)
 
