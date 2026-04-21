@@ -46,7 +46,7 @@ function PostCreatePage(){
           onChange={handleChange}
           rows="10"
         />
-        <button type="submit">작성</button>
+        <button type="submit" className="action-button">작성</button>
       </form>
       {message && <p className="error">{message}</p>}
     </div>

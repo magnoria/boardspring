@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 
 function Layout({ children }){
-    const navigate = useNavigate;
+    const navigate = useNavigate();
 
     const token = localStorage.getItem('token')
     const userName = localStorage.getItem('userName')
@@ -16,6 +16,7 @@ function Layout({ children }){
 
    return (
     <div className="container">
+       <h2><a href="/">magnoria 게시판</a></h2>
       <header className="header">
         <nav className="nav">
           <Link to="/">게시글 목록</Link>
@@ -28,7 +29,9 @@ function Layout({ children }){
           {token ? (
             <>
               <span>{userName} 님 </span>
-              <button onClick={handleLogout}>로그아웃</button>
+              <button onClick={handleLogout} className="action-button">
+                로그아웃
+              </button>
             </>
           ) : (
             <span>비로그인</span>

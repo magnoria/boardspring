@@ -59,17 +59,32 @@ function PostDetailPage(){
     // })
 
     return (
-        <div>
-      <h2>{post.title}</h2>
-      <p>작성자: {post.userName}</p>
-      <p>{post.content}</p>
+       <div className="post-item">
+  <h1>{post.title}</h1>
+  <p>작성자: {post.authorName}</p>
+  <p>{post.content}</p>
 
-      <div className="button-group">
-        <Link to="/">목록</Link>
-        {isOwner && <Link to={`/posts/${post.id}/edit`}>수정</Link>}
-        {isOwner && <button onClick={handleDelete}>삭제</button>}
-      </div>
-    </div>
+  <div className="button-group">
+    <Link to="/" className="action-button secondary-button">
+      목록
+    </Link>
+
+    {isOwner && (
+      <Link
+        to={`/posts/${post.id}/edit`}
+        className="action-button secondary-button"
+      >
+        수정
+      </Link>
+    )}
+
+    {isOwner && (
+      <button onClick={handleDelete} className="action-button">
+        삭제
+      </button>
+    )}
+  </div>
+</div>
   )
 
 }

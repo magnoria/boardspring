@@ -46,7 +46,9 @@ function LoginPage(){
             <form onSubmit={handleSubmit} className="form">
                 <input name="email" placeholder="이메일" value={form.email} onChange={handleChange} />
                 <input name="password" type="password" placeholder="비밀번호" value={form.password} onChange={handleChange} />
-                <button type="submit">로그인</button>
+                <button type="submit" className="action-button">
+                    로그인
+                </button>
             </form>
             {message && <p className="error">{message}</p>}
         </div>
