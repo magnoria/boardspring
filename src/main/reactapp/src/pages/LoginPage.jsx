@@ -36,7 +36,8 @@ function LoginPage(){
             navigate('/')
             window.location.reload()
         } catch (error) {
-            setMessage(error.message)
+            //setMessage(error.message)
+            setMessage('이메일 또는 비밀번호가 올바르지 않습니다.')
         }
     }
     
@@ -46,7 +47,7 @@ function LoginPage(){
             <form onSubmit={handleSubmit} className="form">
                 <input name="email" placeholder="이메일" value={form.email} onChange={handleChange} />
                 <input name="password" type="password" placeholder="비밀번호" value={form.password} onChange={handleChange} />
-                <button type="submit" className="action-button">
+                <button type="submit" className="write-button">
                     로그인
                 </button>
             </form>

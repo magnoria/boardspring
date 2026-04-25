@@ -7,6 +7,7 @@ import com.sb.boardspring.entity.User;
 import com.sb.boardspring.jwt.JwtUtil;
 import com.sb.boardspring.repository.PostRepository;
 import com.sb.boardspring.repository.UserRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -67,7 +68,8 @@ public class PostService {
 
     // 전체 출력
     public List<PostResponse> getAllPosts(){
-        List<Post> posts = postRepository.findAll();
+        List<Post> posts = postRepository.findAll( Sort.by(Sort.Direction.DESC, "id"));
+
         return posts.stream()
                 .map(PostResponse::from)
                 .toList();

@@ -60,9 +60,8 @@ function PostDetailPage(){
 
     return (
        <div className="post-item">
-  <h1>{post.title}</h1>
-  <p>작성자: {post.authorName}</p>
-  <p>{post.content}</p>
+  <h1 >{post.title}</h1>
+  <p className="post-content">{post.content}</p>
 
   <div className="button-group">
     <Link to="/" className="action-button secondary-button">
@@ -79,7 +78,7 @@ function PostDetailPage(){
     )}
 
     {isOwner && (
-      <button onClick={handleDelete} className="action-button">
+      <button onClick={handleDelete} className="write-button">
         삭제
       </button>
     )}

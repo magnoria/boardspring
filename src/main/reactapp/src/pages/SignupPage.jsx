@@ -42,7 +42,7 @@ function SignupPage(){
                 <input name="name" placeholder="이름" value={form.name} onChange={handleChange} />
                 <input name="email" placeholder="이메일" value={form.email} onChange={handleChange} />
                 <input name="password" type="password" placeholder="비밀번호" value={form.password} onChange={handleChange} />
-                <button type="submit" className="action-button">
+                <button type="submit" className="write-button">
                     회원가입
                 </button>
             </form>

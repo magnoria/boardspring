@@ -63,7 +63,7 @@ function PostEditPage() {
           onChange={handleChange}
           rows="10"
         />
-        <button type="submit">수정</button>
+        <button type="submit" className="write-button">수정</button>
       </form>
       {message && <p className="error">{message}</p>}
     </div>

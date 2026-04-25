@@ -29,12 +29,12 @@ function Layout({ children }){
           {token ? (
             <>
               <span>{userName} 님 </span>
-              <button onClick={handleLogout} className="action-button">
+              <button onClick={handleLogout} className="write-button">
                 로그아웃
               </button>
             </>
           ) : (
-            <span>비로그인</span>
+            <span style={{color: "black" }}>비로그인</span>
           )}
         </div>
       </header>

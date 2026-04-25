@@ -28,9 +28,9 @@ function PostCreatePage(){
                 body: JSON.stringify(form)
             });
             alert('생성되었습니다.');
-            navigate('/posts');
+            navigate('/');
         } catch (error) {
-            setMessage(error.message);
+            setMessage("로그인이 필요합니다");
         }
     }
 
@@ -46,7 +46,7 @@ function PostCreatePage(){
           onChange={handleChange}
           rows="10"
         />
-        <button type="submit" className="action-button">작성</button>
+        <button type="submit" className="write-button" >작성</button>
       </form>
       {message && <p className="error">{message}</p>}
     </div>
