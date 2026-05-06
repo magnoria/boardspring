@@ -5,6 +5,8 @@
 이 프로젝트는 **Laravel에서 구현한 게시판 API를 Spring Boot로 재구현**하며
 두 프레임워크의 구조와 흐름 차이를 이해하기 위해 진행한 프로젝트입니다.
 
+spring 게시판 배포 주소 : https://boardspring.vercel.app/
+
 라라벨 게시판 GIT : https://github.com/magnoria/board-laravel.git
 
 단순 CRUD 구현이 아닌,
