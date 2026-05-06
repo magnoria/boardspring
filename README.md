@@ -11,6 +11,8 @@
 
 👉 https://boardspring.vercel.app/
 
+회원가입시 서버와 연결되며 백엔드 서버 연결시 1분정도 지연시간이 있을 수 있습니다.
+
 ## ⚙ Backend (Render)
 
 👉 https://boardspring.onrender.com
