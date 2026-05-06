@@ -9,7 +9,6 @@
 
 ## 🌐 Frontend (Vercel)
 
-👉 https://boardspring-gpvyvveg2-magnoria-7708s-projects.vercel.app </br>
 👉 https://boardspring.vercel.app/
 
 ## ⚙ Backend (Render)
