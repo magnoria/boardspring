@@ -1,196 +1,121 @@
-# 📌 JWT 기반 게시판 API (Laravel → Spring Boot 비교 프로젝트)
+boardspring
 
-## 🧾 프로젝트 소개
+JWT 기반 인증과 React + Spring Boot 구조를 적용한 게시판 프로젝트입니다.
+회원가입, 로그인, 게시글 CRUD, 페이징 처리 및 배포까지 직접 구현했습니다.
 
-이 프로젝트는 **Laravel에서 구현한 게시판 API를 Spring Boot로 재구현**하며
-두 프레임워크의 구조와 흐름 차이를 이해하기 위해 진행한 프로젝트입니다.
+🔗 배포 주소
+Frontend (Vercel)
+https://boardspring.vercel.app/
 
-spring 게시판 배포 주소 : https://boardspring.vercel.app/
-백엔드 서버와 연결시 50초 정도가 걸릴 수 있습니다.
+백엔드와 연결시 50초 정도 걸릴수 있습니다.
 
-라라벨 게시판 GIT : https://github.com/magnoria/board-laravel.git
+Backend (Render)
+https://boardspring.onrender.com
+📌 프로젝트 소개
 
-단순 CRUD 구현이 아닌,
-👉 **JWT 인증 + 사용자 권한 기반 게시글 관리**를 중심으로
-백엔드 구조 설계와 인증 흐름을 직접 구현했습니다.
+Spring Boot와 React를 분리하여 구성한 게시판 프로젝트입니다.
 
----
+단순 CRUD 구현이 아니라:
 
-## 🎯 핵심 기능
+JWT 기반 로그인 인증
+사용자 권한 처리
+Pageable 기반 페이징 처리
+React API 연동
+Render / Vercel 배포
+CORS 및 Spring Security 설정
 
-### 👤 사용자
+등 실제 서비스 흐름을 경험하는 것을 목표로 제작했습니다.
 
-* 회원가입
-* 로그인 (JWT 토큰 발급)
-* 비밀번호 암호화 (BCrypt)
+🛠 기술 스택
+Backend
+Java 17
+Spring Boot 3
+Spring Security
+Spring Data JPA
+JWT (jjwt)
+Gradle
+Frontend
+React
+Vite
+React Router
+Database
+H2 (배포 테스트용)
+MySQL (로컬 개발용)
+Deploy
+Render
+Vercel
+Docker
+✨ 주요 기능
+회원 기능
+회원가입
+로그인
+JWT 토큰 발급
+localStorage 기반 로그인 상태 유지
+게시글 기능
+게시글 목록 조회
+게시글 상세 조회
+게시글 작성
+게시글 수정
+게시글 삭제
+권한 처리
+JWT 토큰 기반 사용자 인증
+본인 게시글만 수정/삭제 가능
+페이징 처리
 
-### 📝 게시글
+Spring Pageable을 사용하여 게시글 목록 페이징 처리 구현
 
-* 게시글 생성
-* 게시글 목록 조회
-* 게시글 상세 조회
-* 게시글 수정 (작성자만 가능)
-* 게시글 삭제 (작성자만 가능)
-
-### 🔐 인증 / 인가
-
-* JWT 기반 인증
-* Authorization 헤더 (Bearer Token) 사용
-* 토큰에서 사용자 정보 추출 후 권한 검증
-
----
-
-## 🛠️ 기술 스택
-
-### Backend
-
-* Java 17
-* Spring Boot
-* Spring Security
-* Spring Data JPA (Hibernate)
-* MySQL
-* JWT (jjwt)
-
-### Frontend
-
-* React
-* Axios
-
----
-
-## 🏗️ 시스템 구조
-
-```plaintext
-[ React ]
-   ↓ (HTTP 요청 + JWT)
-[ Controller ]
-   ↓
-[ Service ]
-   ↓
-[ Repository (JPA) ]
-   ↓
-[ MySQL ]
-```
-
----
-
-## 🔑 인증 흐름
-
-1. 로그인 요청
-2. 서버에서 사용자 검증
-3. JWT 토큰 발급
-4. 클라이언트 localStorage에 저장
-5. 요청 시 Authorization 헤더에 포함
-
-```http
-Authorization: Bearer {token}
-```
-
-6. 서버에서 토큰 검증 후 사용자 정보 추출
-7. 게시글 작성자와 비교하여 권한 체크
-
----
-
-## 📂 주요 코드 구조
-
-```
-src/main/java/com/sb/boardspring
-├── controller
-├── service
-├── repository
-├── entity
-├── dto
-├── config
-└── util (JWT)
-```
-
----
-
-## ⚙️ 실행 방법
-
-### 1. DB 설정
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/board_spring
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-```
-
-### 2. 실행
-
-```bash
+/api/posts?page=0&size=10
+🔐 인증 흐름
+로그인 성공
+→ JWT 토큰 발급
+→ localStorage 저장
+→ Authorization: Bearer 토큰 전송
+→ JwtFilter에서 토큰 검증
+→ 인증 사용자 처리
+🌐 배포 과정
+Frontend
+Vercel 배포
+환경변수(VITE_API_BASE_URL) 설정
+Backend
+Render 배포
+Dockerfile 기반 Java 환경 구성
+CORS
+.allowedOriginPatterns(
+    "http://localhost:5173",
+    "https://*.vercel.app"
+)
+📂 프로젝트 구조
+src
+ └ main
+    ├ java
+    │   └ com.sb.boardspring
+    │       ├ controller
+    │       ├ service
+    │       ├ repository
+    │       ├ entity
+    │       ├ dto
+    │       └ config
+    └ reactapp
+⚙ 실행 방법
+Backend
 ./gradlew bootRun
-```
-
----
-
-## 📸 화면 (예시)
-
-* 로그인 화면
-* 게시글 목록
-* 게시글 상세
-* 글 작성 / 수정
-
-(👉 여기 스크린샷 추가)
-
----
-
-## ⚠️ 트러블슈팅
-
-### 1. 토큰 형식 오류
-
-* 문제: `Bearer` 없이 토큰 전송 시 인증 실패
-* 해결: `Authorization: Bearer {token}` 형식으로 통일
-
----
-
-### 2. 권한 체크 문제
-
-* 문제: 다른 사용자가 게시글 수정 가능
-* 해결: 토큰에서 userId 추출 후 작성자와 비교
-
----
-
-### 3. JPA 연관관계 설정
-
-* 문제: user_id null 오류 발생
-* 해결: `@ManyToOne` + `@JoinColumn`으로 관계 명확히 설정
-
----
-
-## 🔍 Laravel vs Spring Boot 비교
-
-| 항목  | Laravel  | Spring Boot     |
-| --- | -------- | --------------- |
-| 구조  | 간결       | 계층 구조 명확        |
-| ORM | Eloquent | JPA (Hibernate) |
-| 인증  | 간단한 설정   | 직접 구성 필요        |
-| 코드량 | 적음       | 많음 (대신 명확함)     |
-
-👉 Spring에서는 구조가 더 복잡하지만
-**확장성과 유지보수에 유리한 설계**를 경험할 수 있었습니다.
-
----
-
-## 💡 느낀 점
-
-* 단순 CRUD를 넘어 인증 흐름까지 직접 구현하면서
-  **백엔드 전체 흐름을 이해할 수 있었습니다.**
-* Laravel과 비교하며
-  **Spring의 구조적 장점과 설계 방식**을 체감했습니다.
-* 특히 **DTO, Service 계층 분리, 인증 처리 방식**에 대한 이해도가 높아졌습니다.
-
----
-
-## 🚀 개선 예정
-
-* Spring Security + JWT Filter 기반 인증 구조 개선
-* 예외 처리(Global Exception Handler) 정리
-* API 응답 구조 통일
-* 페이징 및 검색 기능 추가
-
----
-
+Frontend
+npm install
+npm run dev
+🚀 향후 개선 예정
+댓글 기능
+Redis 적용
+결제 API 연동
+파일 업로드 기능
+Refresh Token 적용
+AWS 배포
+📖 구현하며 배운 점
+Spring Security와 JWT 인증 흐름 이해
+CORS 및 preflight 요청 처리 경험
+React와 Spring Boot API 통신 구조 이해
+Docker 기반 배포 경험
+Render / Vercel 환경 변수 및 배포 경험
+Pageable 기반 페이징 처리 경험
 ## 🔗 GitHub
 
 https://github.com/magnoria/boardspring
