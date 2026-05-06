@@ -11,6 +11,8 @@
 
 👉 https://boardspring.vercel.app/
 
+#백엔드 활동까지 1분정도 소요시간이 존재합니다 
+
 ## ⚙ Backend (Render)
 
 👉 https://boardspring.onrender.com
