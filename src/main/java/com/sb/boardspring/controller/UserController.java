@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = {"http://localhost:5173", "https://boardspring.vercel.app"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://boardspring-r7xtlo0md-magnoria-7708s-projects.vercel.app"})
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
