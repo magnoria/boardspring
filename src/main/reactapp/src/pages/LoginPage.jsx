@@ -28,6 +28,8 @@ function LoginPage(){
                 body: JSON.stringify(form),
             })
 
+            console.log('로그인 응답 데이터:', data)
+
             localStorage.setItem('token', data.token)
             localStorage.setItem('userId', data.id)
             localStorage.setItem('userName', data.name)
