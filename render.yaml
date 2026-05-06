@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: boardspring
-    runtime: java
-    buildCommand: "chmod +x gradlew && ./gradlew build"
-    startCommand: "java -jar build/libs/*.jar"

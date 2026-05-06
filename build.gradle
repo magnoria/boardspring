@@ -8,6 +8,7 @@ group = 'com.sb'
 version = '0.0.1-SNAPSHOT'
 description = 'boardspring'
 
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
@@ -34,6 +35,7 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
 
+    runtimeOnly 'com.h2database:h2'
 }
 
 tasks.named('test') {
