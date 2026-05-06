@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams , useNavigate, Link } from "react-router-dom";
 import { apiFetch } from "../api/auth";
 
+
 function PostDetailPage(){
     const { id } = useParams();
     const  navigate = useNavigate();

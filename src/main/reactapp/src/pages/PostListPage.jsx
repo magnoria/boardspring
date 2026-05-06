@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { apiFetch } from '../api/auth'
 
+
 function PostListPage() {
   const [posts, setPosts] = useState([])
   const [message, setMessage] = useState('')

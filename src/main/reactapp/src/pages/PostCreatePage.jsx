@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiFetch } from "../api/auth";
 
+
 function PostCreatePage(){
     const navigate = useNavigate();
 
