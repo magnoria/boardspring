@@ -7,6 +7,8 @@ import com.sb.boardspring.entity.User;
 import com.sb.boardspring.jwt.JwtUtil;
 import com.sb.boardspring.repository.PostRepository;
 import com.sb.boardspring.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -67,12 +69,10 @@ public class PostService {
     }
 
     // 전체 출력
-    public List<PostResponse> getAllPosts(){
-        List<Post> posts = postRepository.findAll( Sort.by(Sort.Direction.DESC, "id"));
+    public Page<PostResponse> getAllPosts(Pageable pageable){
+        Page<Post> posts = postRepository.findAll(pageable);
 
-        return posts.stream()
-                .map(PostResponse::from)
-                .toList();
+        return posts.map(PostResponse::from);
     }
 
     //하나 출력

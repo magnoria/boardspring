@@ -28,7 +28,7 @@ function Layout({ children }){
         <div>
           {token ? (
             <>
-              <span>{userName} 님 </span>
+              <span style={{color: "black" }}>{userName} 님 </span>
               <button onClick={handleLogout} className="write-button">
                 로그아웃
               </button>

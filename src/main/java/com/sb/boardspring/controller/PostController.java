@@ -3,6 +3,10 @@ package com.sb.boardspring.controller;
 import com.sb.boardspring.dto.PostRequest;
 import com.sb.boardspring.dto.PostResponse;
 import com.sb.boardspring.service.PostService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +33,12 @@ public class PostController {
 
     // 전체 출력
     @GetMapping
-    public ResponseEntity<List<PostResponse>> getAllPosts(){
-        List<PostResponse> response = postService.getAllPosts();
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+    public ResponseEntity<Page<PostResponse>> getAllPosts(
+            @PageableDefault(size = 10, sort = "id" , direction = Sort.Direction.DESC)
+            Pageable pageable
+    ){
+
+        return ResponseEntity.ok(postService.getAllPosts(pageable));
     }
 
     // 개별 출력
