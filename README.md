@@ -6,6 +6,7 @@
 두 프레임워크의 구조와 흐름 차이를 이해하기 위해 진행한 프로젝트입니다.
 
 spring 게시판 배포 주소 : https://boardspring.vercel.app/
+백엔드 서버와 연결시 50초 정도가 걸릴 수 있습니다.
 
 라라벨 게시판 GIT : https://github.com/magnoria/board-laravel.git
 
