@@ -66,7 +66,7 @@ function PostListPage() {
           {posts.length === 0 ? (
             <tr>
               <td colSpan="3" className="empty">
-                게시글이 없습니다.
+                게시글이 없습니다. 백엔드 연결까지 50초 소요됩니다.
               </td>
             </tr>
           ) : (
