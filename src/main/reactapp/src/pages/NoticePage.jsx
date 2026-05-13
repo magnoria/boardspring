@@ -17,6 +17,7 @@ function NoticePage() {
           href="https://github.com/magnoria/boardspring"
           target="_blank"
           rel="noopener noreferrer"
+          className="notice-link"
         >
           🚀GitHub 저장소 바로가기
         </a>
