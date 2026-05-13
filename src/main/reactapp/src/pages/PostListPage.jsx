@@ -66,7 +66,6 @@ function PostListPage() {
           {/* 공지사항 */}
           <tr className='notice-row'>
             <td>공지</td>
-            <td className="col-no">공지</td>
             <td className="title-cell">
               <a href="https://github.com/magnoria/boardspring"
                 target="_blank" rel="noopener noreferrer">
