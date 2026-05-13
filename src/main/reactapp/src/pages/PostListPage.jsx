@@ -69,17 +69,17 @@ function PostListPage() {
             <td className="title-cell">
               <a href="https://github.com/magnoria/boardspring"
                 target="_blank" rel="noopener noreferrer">
-                📌 작동방식 공지 및 안내
+                📌 작동방식 공지 및 안내(git으로 연결됩니다)
               </a>
             </td>
-                <td>공지</td>
+                <td>magnoria</td>
           </tr>
 
           {/* 게시글*/}
           {posts.length === 0 ? (
             <tr>
               <td colSpan="3" className="empty">
-                게시글이 없습니다. 백엔드 연결까지 50초 소요됩니다.
+                게시글이 없습니다.
               </td>
             </tr>
           ) : (
