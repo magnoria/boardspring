@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { apiFetch } from '../api/auth'
 
 
+
 function PostListPage() {
   const [posts, setPosts] = useState([])
   const [message, setMessage] = useState('')
@@ -67,10 +68,9 @@ function PostListPage() {
           <tr className='notice-row'>
             <td>공지</td>
             <td className="title-cell">
-              <a href="https://github.com/magnoria/boardspring"
-                target="_blank" rel="noopener noreferrer">
-                📌 작동방식 공지 및 안내(git으로 연결됩니다)
-              </a>
+              <Link to="/notice">
+              📌 작동방식 공지 및 안내
+              </Link>
             </td>
                 <td>magnoria</td>
           </tr>

@@ -18,6 +18,7 @@ function App(){
         <Route path="/posts/new" element={<PostCreatePage />} />
         <Route path="/posts/:id" element={<PostDetailPage />} />
         <Route path="/posts/:id/edit" element={<PostEditPage />} />
+        <Route path="/notice" element={<NoticePage />} />
       </Routes>
     </Laout>
   )
