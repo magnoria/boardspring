@@ -63,6 +63,20 @@ function PostListPage() {
         </thead>
 
         <tbody>
+          {/* 공지사항 */}
+          <tr className='notice-row'>
+            <td>공지</td>
+            <td className="col-no">공지</td>
+            <td className="title-cell">
+              <a href="https://github.com/magnoria/boardspring"
+                target="_blank" rel="noopener noreferrer">
+                📌 작동방식 공지 및 안내
+              </a>
+            </td>
+                <td>공지</td>
+          </tr>
+
+          {/* 게시글*/}
           {posts.length === 0 ? (
             <tr>
               <td colSpan="3" className="empty">
