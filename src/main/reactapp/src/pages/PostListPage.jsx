@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { apiFetch } from '../api/auth'
+import NoticePage from './pages/NoticePage'
 
 
 
