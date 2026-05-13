@@ -18,7 +18,7 @@ function NoticePage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub 저장소 바로가기
+          🚀GitHub 저장소 바로가기
         </a>
       </p>
     </div>
