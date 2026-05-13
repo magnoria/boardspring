@@ -6,6 +6,7 @@ import LoginPage from "../src/pages/LoginPage";
 import PostCreatePage from "../src/pages/PostCreatePage";
 import PostDetailPage from "../src/pages/PostDetailPage";
 import PostEditPage from "../src/pages/PostEditPage";
+import NoticePage from './pages/NoticePage'
 
 
 function App(){
