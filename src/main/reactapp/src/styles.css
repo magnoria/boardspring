@@ -186,6 +186,18 @@ textarea {
   margin-top: 24px;
 }
 
+.notice-link {
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.notice-link:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+}
+
 .action-button,
 .write-button {
   display: inline-flex;
@@ -405,15 +417,5 @@ textarea {
   }
 
 
-  .notice-link {
-  color: #e5e7eb;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.notice-link:hover {
-  color: #38bdf8;
-  text-decoration: underline;
-  text-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
-}
+  
 }
